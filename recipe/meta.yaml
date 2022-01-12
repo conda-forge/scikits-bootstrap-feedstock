@@ -1,13 +1,13 @@
 {% set name = "scikits-bootstrap" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: "{{ name|lower }}"
   version: "{{ version }}"
 
 source:
-  url: "https://files.pythonhosted.org/packages/43/41/41fedac699d44eaa2225b899bd89f2a1bdbda8d60bcb59118c1545843cb4/scikits.bootstrap-1.0.1.tar.gz"
-  sha256: b3a3d8796e669ffe0b8d4953bde910d025f8b377a786003929415bac22417055
+  url: "https://files.pythonhosted.org/packages/24/55/3f9953f56ccf8ad89f11cde928e2b6bcd073bf6109a5f5c4d68ff9993873/scikits.bootstrap-1.1.0.tar.gz"
+  sha256: 6ab95d3a7e607731433e97cfd499fcd2da52f065aaae8d0156367904c7dfd1cf
 
 build:
   number: 0
@@ -17,11 +17,12 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - numpy
     - pyerf
-    - python
+    - python >=3.6
+    - setuptools
 
 test:
   imports:
