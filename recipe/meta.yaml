@@ -10,21 +10,23 @@ source:
   sha256: 6ab95d3a7e607731433e97cfd499fcd2da52f065aaae8d0156367904c7dfd1cf
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - numpy
     - pyerf
-    - python >=3.6
+    - python >={{ python_min }}
     - setuptools
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - scikits
     - scikits.bootstrap
